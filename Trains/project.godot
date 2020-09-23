@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Block",
+"language": "GDScript",
+"path": "res://src/blocks/Block.gd"
+} ]
+_global_script_class_icons={
+"Block": ""
+}
+
+[application]
+
+config/name="Trains"
+run/main_scene="res://src/levels/LevelTemplate.tscn"
+config/icon="res://icon.png"
+
+[layer_names]
+
+2d_physics/layer_1="default"
+2d_physics/layer_2="blocks"
+2d_physics/default=false
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
