@@ -109,8 +109,14 @@ resource_local_to_scene = true
 
 [node name="LevelTemplate" type="Node2D"]
 
-[node name="Blocks" type="TileMap" parent="."]
-position = Vector2( 32, 0 )
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blocks" type="TileMap" parent="Control"]
 scale = Vector2( 8, 8 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 8, 8 )

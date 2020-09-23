@@ -14,5 +14,10 @@ func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 		self._on_click()
 
 func _on_click() -> void:
-	print(train_dir_index)
-	self.start_movement(train_dir_index)
+	if not Mechanics.is_moving:
+		Mechanics.is_moving = true
+		self.start_movement(train_dir_index)
+
+func _finish_movement(move_dir_index: int) -> void:
+	Mechanics.is_moving = false
+	._finish_movement(move_dir_index)

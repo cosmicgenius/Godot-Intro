@@ -15,17 +15,13 @@ func start_movement(move_dir_index: int) -> void:
 	
 func _ray_cast(move_dir_index : int) -> void:
 	ray.cast_to = move_dir[move_dir_index] * size
-	
-	# bug with godot?
-	# raycast first picks next_block to be the one on the right, 
-	# then changes cast_to even though the assignment is first 
-	yield(get_tree().create_timer(0.0001), "timeout")
+	ray.force_raycast_update()
 	
 	var next_block = ray.get_collider();
-	print(next_block)
+#	print(next_block)
 	
 	if next_block != null:
-		print(next_block.get_parent().position)
+#		print(next_block.get_parent().position)
 		next_block.get_parent().start_movement(move_dir_index)
 
 
