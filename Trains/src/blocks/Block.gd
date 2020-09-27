@@ -30,4 +30,8 @@ func _finish_movement(move_dir_index: int) -> void:
 	self.position += move_dir[move_dir_index] * size;
 	
 	if not self.get_parent().is_valid(position):
-		queue_free()
+		_die()
+		print (Mechanics.enemies)
+
+func _die() -> void:
+	queue_free()

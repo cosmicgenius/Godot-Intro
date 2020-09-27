@@ -41,6 +41,7 @@ func _replace_trains(tileArr: Array, train_dir_index: int) -> void:
 		self.add_child(new_train)
 
 func _replace_enemies(tileArr: Array) -> void:
+	Mechanics.enemies = tileArr.size()
 	for i in range(tileArr.size()):
 		var new_enemy = Enemy.instance()
 		new_enemy.position = OFFSET + map_to_world(tileArr[i])
