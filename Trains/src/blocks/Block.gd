@@ -31,7 +31,7 @@ func _finish_movement(move_dir_index: int) -> void:
 	
 	if not self.get_parent().is_valid(position):
 		_die()
-		print (Mechanics.enemies)
+#		print (Mechanics.enemies)
 
 func _die() -> void:
 	queue_free()
