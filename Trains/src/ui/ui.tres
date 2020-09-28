@@ -1,9 +1,23 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=5 format=2]
 
 [ext_resource path="res://src/ui/Loja.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/ui/button_stylebox.tres" type="StyleBox" id=2]
+[ext_resource path="res://src/ui/button_pressed_stylebox.tres" type="StyleBox" id=3]
+[ext_resource path="res://src/ui/button_hover_stylebox.tres" type="StyleBox" id=4]
 
 [resource]
 default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+Button/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = ExtResource( 4 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 3 )
 Label/colors/font_color = Color( 0, 0, 0, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -14,3 +28,4 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/icons/Label = null
 Label/styles/normal = null
+VBoxContainer/constants/separation = 20

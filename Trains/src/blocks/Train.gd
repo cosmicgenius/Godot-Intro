@@ -4,7 +4,6 @@ var train_dir_index: int = 0
 
 func _ready() -> void:
 	_set_sprite(train_dir_index)
-	ray.cast_to = move_dir[train_dir_index] * size
 
 func _set_sprite(move_dir_index: int) -> void:
 	sprite.frame = move_dir_index
