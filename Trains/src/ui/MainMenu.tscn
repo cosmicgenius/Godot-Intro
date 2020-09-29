@@ -50,13 +50,15 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
+margin_top = 34.0
 margin_right = 243.0
-margin_bottom = 48.0
+margin_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start Game"
 
 [node name="Close" type="Button" parent="VBoxContainer"]
+visible = false
 margin_top = 68.0
 margin_right = 243.0
 margin_bottom = 116.0
