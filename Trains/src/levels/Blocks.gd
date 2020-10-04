@@ -4,6 +4,7 @@ const Block = preload("res://src/blocks/Block.tscn")
 const Enemy = preload("res://src/blocks/Enemy.tscn")
 const Train = preload("res://src/blocks/Train.tscn")
 const Immovable = preload("res://src/blocks/Immovable.tscn")
+const Domino = preload("res://src/blocks/Domino.tscn")
 
 const OFFSET: Vector2 = Vector2(4, 4)
 
@@ -21,13 +22,22 @@ func _ready() -> void:
 	
 	var immovable_blocks = get_used_cells_by_id(7)
 	
+	var vertical_dominoes = get_used_cells_by_id(8)
+	var horizontal_dominoes = get_used_cells_by_id(9)
+	
 	_replace_normal_blocks(normal_blocks)
+	
 	_replace_trains(right_trains, 0)
 	_replace_trains(up_trains, 1)
 	_replace_trains(left_trains, 2)
 	_replace_trains(down_trains, 3)
+	
 	_replace_enemies(enemies)
+	
 	_replace_immovable_blocks(immovable_blocks)
+	
+	_replace_dominoes(vertical_dominoes, 1)
+	_replace_dominoes(horizontal_dominoes, 0)
 
 func _replace_normal_blocks(tileArr: Array) -> void:
 	for i in range(tileArr.size()):
@@ -58,6 +68,21 @@ func _replace_immovable_blocks(tileArr: Array) -> void:
 	for i in range(tileArr.size()):
 		var new_block = Immovable.instance()
 		new_block.position = OFFSET + map_to_world(tileArr[i])
+		set_cell(tileArr[i].x, tileArr[i].y, -1)
+		self.add_child(new_block)
+
+func _replace_dominoes(tileArr: Array, domino_direction: int) -> void:
+	var OFFSET_CUSTOM = Vector2.ZERO
+	
+	if domino_direction == 0:
+		OFFSET_CUSTOM = Vector2(4, 0)
+	else: 
+		OFFSET_CUSTOM = Vector2(0, 4)
+	
+	for i in range(tileArr.size()):
+		var new_block = Domino.instance()
+		new_block.position = OFFSET + OFFSET_CUSTOM + map_to_world(tileArr[i])
+		new_block.domino_direction = domino_direction
 		set_cell(tileArr[i].x, tileArr[i].y, -1)
 		self.add_child(new_block)
 

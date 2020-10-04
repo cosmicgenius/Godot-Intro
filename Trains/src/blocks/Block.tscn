@@ -138,7 +138,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 resource_name = "tremble_down"
 length = 0.2
 step = 0.025
@@ -189,7 +189,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0.5, 0 ), Vector2( 0, 0 ), Vector2( -0.5, 0 ), Vector2( 0, 0 ), Vector2( 0.5, 0 ), Vector2( 0, 0 ), Vector2( -0.5, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 resource_name = "tremble_up"
 length = 0.2
 step = 0.025
@@ -206,7 +206,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -0.5 ), Vector2( 0, 0 ), Vector2( 0, 0.5 ), Vector2( 0, 0 ), Vector2( 0, -0.5 ), Vector2( 0, 0 ), Vector2( 0, 0.5 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 4, 4 )
 
 [node name="Block" type="Node2D"]
@@ -223,17 +223,17 @@ anims/move_left = SubResource( 2 )
 anims/move_right = SubResource( 3 )
 anims/move_up = SubResource( 4 )
 anims/start = SubResource( 5 )
-anims/tremble_down = SubResource( 9 )
+anims/tremble_down = SubResource( 6 )
 anims/tremble_left = SubResource( 7 )
 anims/tremble_right = SubResource( 8 )
-anims/tremble_up = SubResource( 10 )
+anims/tremble_up = SubResource( 9 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Area2D"]
 enabled = true
