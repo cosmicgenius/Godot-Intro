@@ -13,9 +13,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 100.0
+margin_left = 80.0
 margin_top = 50.0
-margin_right = 460.0
 margin_bottom = 126.0
 custom_fonts/font = ExtResource( 2 )
 text = "Level Select"
@@ -23,19 +22,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 80.0
+margin_top = 150.0
+margin_right = -80.0
+margin_bottom = -50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="beginnings" type="GridContainer" parent="Control"]
-anchor_right = 1.0
-margin_left = 100.0
-margin_top = 150.0
-margin_right = -100.0
-margin_bottom = 150.0
+[node name="GridContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_constants/separation = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Beginnings" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+margin_right = 178.0
+margin_bottom = 58.0
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Beginnings"]
+margin_right = 178.0
+margin_bottom = 38.0
+text = "Beginnings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/GridContainer/Beginnings"]
+margin_top = 58.0
+margin_right = 178.0
+margin_bottom = 58.0
+theme = ExtResource( 1 )
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 6
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoublingUp" type="VBoxContainer" parent="ScrollContainer/GridContainer"]
+margin_top = 118.0
+margin_right = 178.0
+margin_bottom = 176.0
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/DoublingUp"]
+margin_right = 178.0
+margin_bottom = 38.0
+text = "Doubling Up"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/GridContainer/DoublingUp"]
+margin_top = 58.0
+margin_right = 178.0
+margin_bottom = 58.0
 theme = ExtResource( 1 )
 custom_constants/vseparation = 20
 custom_constants/hseparation = 20

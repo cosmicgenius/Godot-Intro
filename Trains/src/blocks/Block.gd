@@ -36,7 +36,10 @@ func set_move_dir_index(new_index: int) -> bool:
 	
 	var can_move: bool = true 
 	for block in _targets:
-		can_move = can_move and block.set_move_dir_index(new_index)
+		# we want set_move_dir_index to propagate down no matter if can_move is 
+		# true or not
+		var next_works = block.set_move_dir_index(new_index)
+		can_move = can_move and next_works
 	
 	return can_move
 

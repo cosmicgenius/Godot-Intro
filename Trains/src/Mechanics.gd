@@ -9,7 +9,6 @@ var max_levels = 12
 const LEVEL_PREFIX: String = "res://src/levels/%s/Level_"
 
 const LEVEL_SELECT: String = "res://src/ui/LevelSelect.tscn"
-const WIN_SCREEN: String = "res://src/ui/WinScreen.tscn"
 
 signal on_win 
 
@@ -37,4 +36,4 @@ func _go_to_next_level() -> void:
 	if current_level != max_levels:
 		tree.change_scene(LEVEL_PREFIX % tree.current_scene.filename.split("/")[4] + str(current_level + 1) + ".tscn")
 	else:
-		tree.change_scene(WIN_SCREEN)
+		tree.change_scene(LEVEL_SELECT)

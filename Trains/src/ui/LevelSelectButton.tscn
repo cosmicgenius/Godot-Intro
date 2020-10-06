@@ -4,8 +4,8 @@
 [ext_resource path="res://src/ui/LevelSelectButton.gd" type="Script" id=2]
 
 [node name="Button" type="Button"]
-margin_right = 100.0
-margin_bottom = 100.0
+margin_right = 120.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
 custom_fonts/font = ExtResource( 1 )
 text = "1"
